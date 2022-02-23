@@ -12,38 +12,62 @@ public class Team {
     private String name;
     private int maxPlayers = 17;
     public ArrayList<Player> roasterPlayers = new ArrayList<>();
-    /** Get Team's name
+
+    /**
+     * Get Team's name
+     *
      * @return name
-     * */
+     */
     public String getTeamName() {
         return name;
     }
-    /** Set Team's name
-     * @param teamName*/
+
+    /**
+     * Set Team's name
+     *
+     * @param teamName
+     */
     public void setTeamName(String teamName) {
         this.name = teamName;
     }
-    /** Get max players in a team
-     * @return maxPlayers*/
+
+    /**
+     * Get max players in a team
+     *
+     * @return maxPlayers
+     */
     public int getMaxPlayers() {
         return maxPlayers;
     }
-    /** Set max players
-     * @param maxPlayers */
+
+    /**
+     * Set max players
+     *
+     * @param maxPlayers
+     */
     public void setMaxPlayers(int maxPlayers) {
         this.maxPlayers = maxPlayers;
     }
-    /** Constructor of Team without parameters*/
+
+    /**
+     * Constructor of Team without parameters
+     */
     public Team() {
         this.name = "Random Team";
     }
-    /** Constructor of team with team name
-     * @param teamName */
+
+    /**
+     * Constructor of team with team name
+     *
+     * @param teamName
+     */
     public Team(String teamName) {
         this.name = teamName;
     }
+
     /**
      * Check if the player is on the team or not using iterator and equals
+     *
      * @param playerInfo
      * @return flag
      */
@@ -60,8 +84,10 @@ public class Team {
         }
         return flag;
     }
+
     /**
      * Add player to the team when player is not contain in the team
+     *
      * @param playerInfo
      */
     public void insertPlayer(Player playerInfo) throws Exception {

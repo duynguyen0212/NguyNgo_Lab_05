@@ -4,21 +4,24 @@
  * Description: Main class
  */
 package Lab_05;
+
 import java.util.Iterator;
+
 public class Main {
-    /**Add players to teams and testing excepting handling and output result*/
+    /**
+     * Add players to teams and testing excepting handling and output result
+     */
     public static void main(String args[]) throws Exception {
         Team teamA = new Team("Tigers");
         Team teamB = new Team();
 
         // testing try and catch statement
-        /*try {
+        try {
             teamA.insertPlayer(new Player("John", 1));
-            teamA.insertPlayer(new Player("Mike", 2));
-        }
-        catch(Exception e){
+            teamA.insertPlayer(new Player("John", 1));
+        } catch (Exception e) {
             e.printStackTrace();
-        }*/
+        }
 
         // Add players to team A, from position number 1 - 15
         for (int i = 1; i < (teamA.getMaxPlayers() - 1); i++) {
@@ -31,12 +34,22 @@ public class Main {
         }
 
         // Try to insert duplicate player to team A
-        // teamA.insertPlayer(new Player("Player", 10));
+        try {
+            teamA.insertPlayer(new Player("Player", 10));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 
         // Try to add more player to team B
-        teamB.insertPlayer(new Player("Josh", 10));
+        try {
+            teamB.insertPlayer(new Player("Josh", 10));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         // Test the contains method
+        System.out.println("Check the consistent of contain method: ");
         for (int i = 0; i < 20; i += 2)
             if (!teamA.contains(new Player("Player", 0 + i))) {
                 System.out.println("We don't have the player on the team. Position: " + i);
@@ -46,6 +59,7 @@ public class Main {
         Iterator<Player> iterator = teamA.roasterPlayers.iterator();
         Iterator<Player> iterator2 = teamB.roasterPlayers.iterator();
 
+        System.out.println("\nPrinting players of Team A and B");
         System.out.println(teamA.getTeamName() + ":");
         while (iterator.hasNext()) {
             Object element = iterator.next();
